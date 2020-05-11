@@ -5,7 +5,7 @@
 }
 
 body{
-    background: linear-gradient(rgba(69, 69, 122, 0.644), rgba(143, 75, 143, 0.555));
+    background: linear-gradient(rgba(190, 132, 43, 0.644), rgba(106, 44, 143, 0.555));
     background-size: cover;
     background-position: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,10 +22,12 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: white;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.438);
+    /* background-color: white; */
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6);
     overflow: hidden;
     border-radius: 15px 15px 15px 15px;
+    border: 15px solid purple;
+    padding-top: 5px;
 }
 
 .box{
@@ -36,8 +38,9 @@ body{
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 60px;
-    background: rgb(207, 197, 197);
+    /* background: rgb(207, 197, 197); */
     color: beige;
+    
 }
 
 .player-name{
@@ -61,21 +64,21 @@ body{
 }
 
 .player-current-box{
-    padding-top: 100px;;
+    padding-top:100px;
 }
 
 .player-current-label{
     text-transform: uppercase;
     margin-bottom: 0px;
     font-size: 30px;
-    color: rgb(70, 67, 6);
+    color:beige;
 }
 
 .player-current-score{
     text-transform: uppercase;
     margin-bottom: 0px;
     font-size: 25px;
-    color: rgb(70, 67, 6);
+    color: beige;
 }
 
 
@@ -111,16 +114,16 @@ button:focus{
 }
 
 .btn-roll{
-    top:450px;
+    top:475px;
 }
 
 .dice{
     position: absolute;
     left: 50%;
-    top: 300px;
+    top: 310px;
     transform: translate(-50%);
     height: 100px;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.438);
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.538);
     border-radius: 15px 15px 15px 15px;
 }
 
