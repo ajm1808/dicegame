@@ -41,6 +41,8 @@ bRoll.addEventListener('click',()=>{
         dice.style.display="none";
         document.getElementById("score-0").textContent=("A"+" "+ d1+"!"+ " "+ "booooo!");
         document.getElementById("current-0").textContent="0";
+        document.querySelector("#header").textContent="Loser!";
+
     }
     if(gamePlaying){
         scores[player]+=roundScore;
