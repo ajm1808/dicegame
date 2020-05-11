@@ -32,7 +32,7 @@ function start() {
 }
 start();
 
-// bNew.addEventListener("click",start);
+bNew.addEventListener("click",start);
 
 bRoll.addEventListener('click',()=>{
    if(gamePlaying){

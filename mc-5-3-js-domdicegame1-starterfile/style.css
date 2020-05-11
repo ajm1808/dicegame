@@ -1,44 +1,126 @@
-.wrap{
-    align-content: center;
-    height: 100vh;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
 
+body{
+    background: linear-gradient(rgba(69, 69, 122, 0.644), rgba(143, 75, 143, 0.555));
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color:  rgba(182, 132, 66, 0.822);
+    text-align: center;
+}
+
+.wrapper{
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.438);
+    overflow: hidden;
+    border-radius: 15px 15px 15px 15px;
+}
 
 .box{
-    display: flex;
-    box-sizing: border-box;
-    height: 400px;
-    width: 300px;
-    border: 4px solid orange;
-    justify-content: center;
+    width: 100%;
+    float: left;
+    height: 600px;
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 60px;
+    background: rgb(207, 197, 197);
+    color: beige;
 }
 
-.currentscore{
-    
-    height: 40px;
-    width: 40px;
-    color: black;
-    background-color:wheat ;
+.player-name{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
 }
 
-.playerscoretotal{
-    height: 40px;
-    width: 40px;
-    color: black;
-    background-color:wheat ;
+.player-score{
+    text-align: center;
+    font-size: 60px;
+    top:200px;
+    font-weight: 100;
+    color: rgba(69, 69, 122, 0.644);
+    margin-bottom: 130px;
 }
 
-#startagain{
-    height: 25px;
-    width: 40px;
-    color: black;
-    background-color: wheat;
+.player-current-box{
+    padding-top: 100px;;
 }
 
-.playerinfo{
-    align-self: center;
+.player-current-label{
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    font-size: 30px;
+    color: rgb(70, 67, 6);
 }
 
-.rollbutton{
-    align-self:bottom;
+.player-current-score{
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    font-size: 25px;
+    color: rgb(70, 67, 6);
 }
+
+
+button{
+    position: absolute;
+    width:200px;
+    left: 50%;
+    transform:translate(-50%);
+    color:rgba(69, 69, 122, 0.644);
+    background: none;
+    border:none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-transform:uppercase;
+    cursor:pointer;
+    font-weight: 300;
+    transition: background-color 0.5s ease, color 0.3s ease;
+    vertical-align: text-top;
+    line-height:1;
+}
+
+button:hover{
+    font-weight: 600;
+
+}
+
+button:focus{
+    outline:none
+}
+
+.btn-new{
+    top:100px;
+}
+
+.btn-roll{
+    top:450px;
+}
+
+.dice{
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translate(-50%);
+    height: 100px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.438);
+    border-radius: 15px 15px 15px 15px;
+}
+

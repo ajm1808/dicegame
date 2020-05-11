@@ -1,30 +1,69 @@
+let score, roundScore, gamePlaying;
 
-// math.random for the dice generator
-// if else statement for score (with sum)
+const bNew=document.querySelector(".btn-new");
+const bRoll=document.querySelector(".btn-roll");
+const dice=document.getElementById("dice");
+let player=document.getElementById("current-0");
 
-const header=document.getElementById("header");
-const start=document.getElementsByClassName("startagain");
-const startBtn=document.getElementById("startagain");
-const info=document.getElementsByClassName("playerinfo");
-const total=document.getElementsByClassName("playerscoretotal");
-const current=document.getElementsByClassName("currentscore");
-const rollBtn=document.getElementsByClassName("rollbutton");
+function start() {
+    scores=[0];
+    roundScore=0;
+    gamePlaying=true;
 
-rollBtn.addEventListener('click',()=>{
-    let current=document.getElementsByClassName("current score");
-    let sum=(0);
-    let total=document.getElementsByClassName("player score total");
-    let c1= Math.floor(Math.random()*6)+1;
-    if (c1>1&&sum<20) {
-        sum+=c1;
+    dice.style.display="none";
+
+    document.getElementById("score-0").textContent="0";
+    document.getElementById("current-0").textContent="0";
+    document.querySelector("#header").textContent="The game begins when you start rolling...";
+  
+}
+start();
+
+bNew.addEventListener("click",start);
+
+bRoll.addEventListener('click',()=>{
+   if(gamePlaying){
+    //if game is playing the button roll will cause the function to generate a random number   
+    let d1=Math.floor(Math.random()*6)+1;
+
+    //dice will only appear (block) when roll button is clicked. The numbers that appear will match the numbers of d1 & d2
+    dice.style.display="block";
+    dice.src="img/dice"+d1+".png";
+
+    if(d1!==1){
+        roundScore+=d1;
+        document.querySelector("#current-0").textContent=roundScore;
+        dice.style.display="block";
+        document.getElementById("score-0").textContent=(d1+" "+"keep going");
     }
-    else if(c1==1&&sum<19){
-        sum=0;
-        info.textContent="You lose";
+    else {
+        document.querySelector("#current-0").textContent="You rolled a 1 - you lost!";
+        dice.style.display="none";
+        document.getElementById("score-0").textContent=("A"+" "+ d1+"!"+ " "+ "booooo!");
+        document.getElementById("current-0").textContent="0";
     }
-    else if (sum>20) {
-    info.textContent="You win - press start button to start again"
+    if(gamePlaying){
+        scores[player]+=roundScore;
+
+
+        let winningScore=20;
+        //check if player has won the game
+        if(roundScore>=winningScore){
+            document.getElementById("score-0").textContent="Winner";
+            document.getElementById("score-0").style.display="block";            
+            dice.style.display="none";
+            document.querySelector("#header").textContent="You won!";
+
+            gamePlaying=false;
+        }
+        else {
+            document.querySelector("#header").textContent="Not yet!";
+
+        }
     }
-    total.textContent=sum.value;
-    current.textContent=c1.value;
-})
+    
+    
+}
+});
+
+
