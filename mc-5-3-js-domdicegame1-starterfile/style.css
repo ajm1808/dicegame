@@ -25,7 +25,7 @@ body{
     /* background-color: white; */
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.6);
     overflow: hidden;
-    border-radius: 15px 15px 15px 15px;
+    /* border-radius: 15px 15px 15px 15px; */
     border: 15px solid purple;
     padding-top: 5px;
 }

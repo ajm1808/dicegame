@@ -47,15 +47,17 @@ bRoll.addEventListener('click',()=>{
     dice2.src="img/dice"+d2+".png";
 
     //skipping to player 2 if dice is equal to 1 and added score to total
-    if(d1 !==1&& d2!==1){
-        roundScore+=+d1+d2;
-        document.querySelector("#current-"+activePlayer).textContent=roundScore;
+    if(d1==1 && d2==1){
+        nextPlayer();
+
     }
     else {
-        nextPlayer();
-    }
-    }
+        roundScore+=+d1+d2;
+        document.querySelector("#current-"+activePlayer).textContent=roundScore;
     
+    }
+    }
+     
 });
 
 function nextPlayer(){
@@ -72,8 +74,8 @@ function nextPlayer(){
     document.querySelector(".player-0-panel").classList.toggle("active");
     document.querySelector(".player-1-panel").classList.toggle("active");
 
-    dice1.style.display="none";
-    dice2.style.display="none";
+    dice1.style.display="block";
+    dice2.style.display="block";
 };
 
 bHold.addEventListener("click",()=>{
@@ -89,7 +91,7 @@ bHold.addEventListener("click",()=>{
             winningScore=input;
         }
         else{
-            winningScore=40;
+            winningScore=100;
         }
 
         //check if player has won the game
